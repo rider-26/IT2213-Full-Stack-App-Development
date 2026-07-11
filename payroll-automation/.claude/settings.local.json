@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"/c/Users/andre/Downloads/IT2213-Full-Stack-App-Development-main\" -maxdepth 2 -name \".git\" -type d 2>/dev/null; echo \"search done\")",
+      "Read(//c/Users/andre/Downloads/IT2213-Full-Stack-App-Development-main/**)"
+    ]
+  }
+}

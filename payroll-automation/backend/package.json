@@ -1,0 +1,22 @@
+{
+  "name": "payroll-automation-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Automated Payroll Processing System",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parse": "^7.0.1",
+    "dotenv": "^17.4.2",
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.4"
+  }
+}
