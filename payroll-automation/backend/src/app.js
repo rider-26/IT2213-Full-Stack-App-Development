@@ -10,6 +10,16 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Friendly landing response so opening http://localhost:5000 in a browser
+// doesn't show "Cannot GET /" — the real endpoints live under /api.
+app.get('/', (req, res) => {
+  res.json({
+    name: 'Payroll Automation API',
+    endpoints: ['/api/pay-periods', '/api/roster'],
+  });
+});
+
 app.use('/api', routes);
 app.use(errorHandler);
 
