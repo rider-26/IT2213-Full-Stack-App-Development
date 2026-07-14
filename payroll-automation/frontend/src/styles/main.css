@@ -497,6 +497,75 @@ tbody tr:last-child td {
   white-space: nowrap;
 }
 
+/* ── UC-003: payroll calculation page ── */
+
+.warning-banner {
+  background: var(--warning-wash);
+  color: #7a5207;
+  border: 1px solid rgba(179, 118, 10, 0.25);
+}
+
+.success-banner {
+  background: var(--good-wash);
+  color: #0a7a0a;
+  border: 1px solid rgba(12, 163, 12, 0.25);
+}
+
+/* note under an Incomplete badge explaining what's missing */
+.line-note {
+  font-size: 0.78rem;
+  color: var(--ink-secondary);
+  margin-top: 0.25rem;
+  white-space: normal;
+  max-width: 280px;
+  line-height: 1.35;
+}
+
+/* stacked label + input, used by the login/register form */
+.field-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.field-column label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.field-column input,
+.field-column select {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink-primary);
+}
+
+.login-card {
+  max-width: 420px;
+}
+
+/* text-style button for "switch to register" / "log out" */
+.login-switch {
+  background: none;
+  border: none;
+  color: var(--accent);
+  padding: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-switch:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 @media (max-width: 640px) {
   .stat-grid {
     grid-template-columns: repeat(2, 1fr);

@@ -9,6 +9,8 @@ const { validateToken } = require('../middleware/auth');
 const router = express.Router();
 
 router.post('/calculate', validateToken, payrollController.calculate);
+// Must be declared before /:payPeriodId or 'periods' would be read as an id.
+router.get('/periods/list', validateToken, payrollController.listPeriods);
 router.get('/:payPeriodId', validateToken, payrollController.getPayroll);
 
 module.exports = router;

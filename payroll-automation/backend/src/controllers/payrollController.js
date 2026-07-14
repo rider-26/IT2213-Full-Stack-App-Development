@@ -71,4 +71,15 @@ async function getPayroll(req, res, next) {
   }
 }
 
-module.exports = { calculate, getPayroll };
+// GET /api/payroll/periods/list — pay periods with status, so the frontend
+// can mark which ones are 'validated' and ready to calculate.
+async function listPeriods(req, res, next) {
+  try {
+    const payPeriods = await payrollCalcEngine.listPeriodsWithStatus();
+    res.status(200).json({ payPeriods });
+  } catch (err) {
+    next(err);
+  }
+}
+
+module.exports = { calculate, getPayroll, listPeriods };

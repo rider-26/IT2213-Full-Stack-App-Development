@@ -440,4 +440,28 @@ async function getPayrollForPeriod(payPeriodId) {
   };
 }
 
-module.exports = { calculatePayroll, getPayrollForPeriod, derivePeriodTotals, VARIANCE_THRESHOLD };
+/**
+ * All pay periods with their status — the UC-001 pay-periods API doesn't
+ * expose status, and the PayrollCalc page needs it to show which periods
+ * are actually 'validated' and ready to calculate. Read-only.
+ * @returns {Promise<Array<{id: string, startDate: string, endDate: string, status: string}>>}
+ */
+async function listPeriodsWithStatus() {
+  return sequelize.query(
+    `SELECT id,
+            to_char(start_date, 'YYYY-MM-DD') AS "startDate",
+            to_char(end_date, 'YYYY-MM-DD') AS "endDate",
+            status
+     FROM pay_period
+     ORDER BY start_date`,
+    { type: QueryTypes.SELECT }
+  );
+}
+
+module.exports = {
+  calculatePayroll,
+  getPayrollForPeriod,
+  derivePeriodTotals,
+  listPeriodsWithStatus,
+  VARIANCE_THRESHOLD,
+};

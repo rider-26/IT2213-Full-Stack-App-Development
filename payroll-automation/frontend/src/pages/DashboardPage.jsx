@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import RosterSyncPage from './RosterSyncPage.jsx';
+import PayrollCalcPage from './PayrollCalcPage.jsx';
 
 // Placeholder for any use case whose page hasn't been built yet. Once that
 // use case is ready, swap its entry in TABS below for the real component —
@@ -20,7 +21,7 @@ function ComingSoon({ label }) {
 const TABS = [
   { key: 'roster', label: 'Roster Sync (UC-001)', component: RosterSyncPage },
   { key: 'timesheets', label: 'Timesheet Validation (UC-002)', component: () => <ComingSoon label="Timesheet Validation" /> },
-  { key: 'payroll', label: 'Payroll Calculation (UC-003)', component: () => <ComingSoon label="Payroll Calculation" /> },
+  { key: 'payroll', label: 'Payroll Calculation (UC-003)', component: PayrollCalcPage },
   { key: 'approval', label: 'Approval (UC-004)', component: () => <ComingSoon label="Approval" /> },
   { key: 'payment', label: 'Payment & HRMS (UC-005)', component: () => <ComingSoon label="Payment & HRMS" /> },
 ];
