@@ -40,9 +40,10 @@ function toHundredths(numericString) {
 }
 
 // hours (hundredths) x rate (cents) x multiplier (hundredths, 150 = 1.5x),
-// rounded half-up at the cent. Pure integer maths until the final division.
+// rounded half-up at the cent. Pure integer maths until the final division:
+// the two /100 scale factors (hours, multiplier) combine into one /10000.
 function payComponentCents(hoursHundredths, rateCents, multiplierHundredths) {
-  return Math.round((hoursHundredths * rateCents * multiplierHundredths) / 1000000);
+  return Math.round((hoursHundredths * rateCents * multiplierHundredths) / 10000);
 }
 
 async function loadPeriod(payPeriodId, transaction) {
@@ -464,4 +465,5 @@ module.exports = {
   derivePeriodTotals,
   listPeriodsWithStatus,
   VARIANCE_THRESHOLD,
+  payComponentCents, // exported for the rounding unit tests
 };

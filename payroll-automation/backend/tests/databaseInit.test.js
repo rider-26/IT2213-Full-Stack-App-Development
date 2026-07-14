@@ -23,6 +23,8 @@ describe('initializeDatabase', () => {
       `SELECT to_regclass('public.pay_period') AS pay_period_exists`
     );
 
-    expect(tableRows[0].pay_period_exists).toBe('public.pay_period');
+    // to_regclass drops the schema prefix when 'public' is on the
+    // search_path, so accept both spellings.
+    expect(['pay_period', 'public.pay_period']).toContain(tableRows[0].pay_period_exists);
   });
 });

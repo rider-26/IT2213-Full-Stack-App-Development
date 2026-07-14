@@ -6,7 +6,6 @@ module.exports = {
   testPathIgnorePatterns: [
     '/node_modules/',
     'tests/validation.test.js',
-    'tests/payrollCalc.test.js',
     'tests/approval.test.js',
     'tests/payment.test.js',
   ],
