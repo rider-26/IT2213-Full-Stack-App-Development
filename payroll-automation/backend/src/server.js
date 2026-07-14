@@ -23,4 +23,11 @@ async function start() {
 start().catch((err) => {
   console.error('[server] Failed to start — is PostgreSQL running? (docker-compose up)', err.message);
   process.exit(1);
+// Entry point: starts the Express app.
+const app = require("./app");
+
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`Payroll Automation API listening on http://localhost:${PORT}`);
 });

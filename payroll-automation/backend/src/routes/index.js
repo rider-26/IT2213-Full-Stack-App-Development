@@ -10,5 +10,13 @@ const router = express.Router();
 
 router.use('/roster', rosterRoutes);
 router.use('/pay-periods', payPeriodRoutes);
+// Combines every use case's routes under /api.
+// Each teammate adds their own require + router.use line here for their use case.
+const express = require("express");
+const router = express.Router();
+
+const approvalsRoutes = require("./approvals"); // UC-004
+
+router.use("/approvals", approvalsRoutes);
 
 module.exports = router;
