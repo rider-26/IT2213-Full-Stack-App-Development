@@ -5,10 +5,14 @@
 const express = require('express');
 const rosterRoutes = require('./roster');
 const payPeriodRoutes = require('./payPeriods');
+const payrollRoutes = require('./payroll'); // UC-003
+const userRoutes = require('./user'); // auth
 
 const router = express.Router();
 
 router.use('/roster', rosterRoutes);
 router.use('/pay-periods', payPeriodRoutes);
+router.use('/payroll', payrollRoutes); // UC-003
+router.use('/user', userRoutes); // auth
 
 module.exports = router;

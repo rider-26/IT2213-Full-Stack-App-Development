@@ -16,7 +16,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.json({
     name: 'Payroll Automation API',
-    endpoints: ['/api/pay-periods', '/api/roster'],
+    endpoints: ['/api/pay-periods', '/api/roster', '/api/payroll', '/api/user'],
   });
 });
 
