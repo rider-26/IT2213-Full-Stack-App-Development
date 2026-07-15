@@ -1,0 +1,259 @@
+/* ValidateTimesheetsPage.css
+   just copying the look of the roster sync page so both pages feel
+   consistent - light lavender bg, white cards, blue button, the little
+   pill badges for status etc */
+
+.vt-page {
+  background: #F1F0F6;
+  min-height: 100vh;
+  padding: 32px 40px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1F2430;
+}
+
+.vt-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #14151A;
+}
+
+.vt-description {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #4B4F5A;
+  max-width: 900px;
+  margin: 0 0 24px;
+}
+
+.vt-controls {
+  margin-bottom: 20px;
+}
+
+.vt-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4B4F5A;
+  margin-bottom: 6px;
+}
+
+.vt-select {
+  background: #fff;
+  border: 1px solid #E1E0EA;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  min-width: 280px;
+  color: #1F2430;
+}
+
+.vt-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.vt-btn-primary {
+  background: #2F5CF0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.vt-btn-primary:hover { background: #2549C9; }
+.vt-btn-primary:disabled { background: #C7CEEA; cursor: not-allowed; }
+
+.vt-btn-secondary {
+  background: #fff;
+  color: #1F2430;
+  border: 1px solid #E1E0EA;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.vt-btn-secondary:disabled { color: #B0B3BD; cursor: not-allowed; }
+
+.vt-btn-dark { background: #1F2430; color: #fff; border: none; border-radius: 6px; }
+.vt-btn-danger { background: #FEE2E2; color: #B91C1C; border: none; border-radius: 6px; }
+.vt-btn-ghost { background: #F1F0F6; color: #4B4F5A; border: none; border-radius: 6px; }
+.vt-btn-sm { padding: 6px 12px; font-size: 12px; font-weight: 600; cursor: pointer; }
+
+.vt-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.vt-stat-card {
+  background: #fff;
+  border: 1px solid #EDEBF3;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.vt-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #8A8D99;
+  margin-bottom: 10px;
+}
+
+.vt-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #14151A;
+}
+
+.vt-stat-accent { color: #B45309; }
+.vt-stat-small { font-size: 16px; font-weight: 600; }
+
+.vt-table-card {
+  background: #fff;
+  border: 1px solid #EDEBF3;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.vt-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.vt-table-header h2 { font-size: 17px; font-weight: 700; margin: 0; }
+.vt-table-count { font-size: 13px; color: #8A8D99; }
+
+.vt-table-columns {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.2fr 1fr 1fr;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #8A8D99;
+  padding: 0 14px 10px;
+  border-bottom: 1px solid #EDEBF3;
+}
+
+.vt-staff-group { border-bottom: 1px solid #F3F2F7; }
+
+.vt-staff-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.2fr 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px;
+  font-size: 14px;
+  color: #1F2430;
+  text-align: left;
+}
+.vt-staff-row:hover { background: #FAFAFD; }
+
+.vt-flag-count { color: #4B4F5A; font-weight: 600; }
+
+.vt-entries {
+  background: #FAFAFD;
+  border-radius: 8px;
+  margin: 0 14px 14px;
+  padding: 10px 14px;
+}
+
+.vt-entries-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.2fr 1fr;
+  font-size: 11px;
+  font-weight: 700;
+  color: #8A8D99;
+  padding: 6px 0;
+}
+
+.vt-entry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.2fr 1fr;
+  font-size: 13px;
+  padding: 8px 0;
+  border-top: 1px dashed #E9E8F0;
+  align-items: center;
+}
+
+.vt-issue-tag {
+  background: #FEF3C7;
+  color: #B45309;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.vt-ok-tag {
+  color: #8A8D99;
+  font-size: 12px;
+}
+
+.vt-review-btn {
+  background: #fff;
+  border: 1px solid #E1E0EA;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vt-resolve-panel {
+  margin-top: 10px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #EDEBF3;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 480px;
+}
+
+.vt-input {
+  border: 1px solid #E1E0EA;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.vt-resolve-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vt-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.vt-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.vt-empty {
+  padding: 30px 0;
+  text-align: center;
+  color: #8A8D99;
+  font-size: 14px;
+}
