@@ -5,10 +5,6 @@ const express = require('express');
 const cors = require('cors');
 const routes = require('./routes/index');
 const errorHandler = require('./middleware/errorHandler');
-// Express app setup: middleware + routes. Kept minimal for now.
-const express = require("express");
-const cors = require("cors");
-const routes = require("./routes/index");
 
 const app = express();
 
@@ -26,16 +22,5 @@ app.get('/', (req, res) => {
 
 app.use('/api', routes);
 app.use(errorHandler);
-app.use("/api", routes);
-
-app.get("/", (req, res) => {
-  res.json({ message: "Payroll Automation API is running" });
-});
-
-// Basic error handler - catches anything that wasn't handled in a controller.
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: "SERVER_ERROR", message: "Something went wrong" });
-});
 
 module.exports = app;
